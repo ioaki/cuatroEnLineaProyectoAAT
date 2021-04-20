@@ -28,5 +28,5 @@ def dibujarTablero(tablero):
     print();
   return
         
-secuencia = [1,2,3,1]
+secuencia = [1,2,3,1,3,4]
 dibujarTablero(completarTablero(secuencia,generarTablero()))
