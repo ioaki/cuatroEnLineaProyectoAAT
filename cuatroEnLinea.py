@@ -17,8 +17,9 @@ def soltarFichaEnColumna(ficha, columna, tablero):
 def completarTablero(secuencia,tablero):
   jugador=0
   for jugada in secuencia:
-    tablero=soltarFichaEnColumna(jugador%2+1,jugada,tablero)
-    jugador+=1
+    if validaColumna(jugada): #Si se inserta una ficha en una columna incorrecta, se ignorara
+      tablero=soltarFichaEnColumna(jugador%2+1,jugada,tablero)
+      jugador+=1
   return tablero
 
 def dibujarTablero(tablero):
@@ -27,6 +28,11 @@ def dibujarTablero(tablero):
         print(tablero[fila][columna],end="")
     print();
   return
-        
-secuencia = [1,2,3,1,3,4]
+
+def validaColumna(columna):
+  if columna>0 and columna<7:
+    return True
+    return False
+
+secuencia = [1,2,3,1,3,4,7,8,9,10]
 dibujarTablero(completarTablero(secuencia,generarTablero()))
