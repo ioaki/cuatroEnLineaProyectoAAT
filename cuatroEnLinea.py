@@ -41,9 +41,12 @@ def validarFichas(secuencia):
       return False
   return True
         
-secuencia = [1,2,3,1,3,4,8]
-
+secuencia = [1,2,3,1,3,4]
+tablero = []
 if(validarFichas(secuencia)):
-  dibujarTablero(completarTablero(secuencia,generarTablero()))
+  tablero = completarTablero(secuencia,generarTablero())
+  dibujarTablero(tablero)
 else:
     print("El valor de las columnas debe ir del 1 al 7")
+
+print(contenidoColumna(2, tablero))
