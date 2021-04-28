@@ -15,6 +15,22 @@ def contenidoColumna(nro_columna, tablero):
     columna.append(celda)
   return columna
 
+def contenidoFila(nro_fila, tablero):
+  fila = []
+  for celda in tablero[nro_fila-1]:
+    fila.append(celda)
+  return fila
+
+def filas(tablero):
+  return tablero
+
+def columnas(tablero):
+  columnas=[]
+  for i in range(len(tablero)):
+    columnas.insert(-1,contenidoColumna(i,tablero))
+  return columnas
+
+
 def soltarFichaEnColumna(ficha, columna, tablero):
  for fila in range(6,0,-1):
     if tablero[fila-1][columna-1]==0:
