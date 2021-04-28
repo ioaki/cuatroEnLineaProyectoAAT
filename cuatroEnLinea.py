@@ -66,3 +66,7 @@ else:
     print("El valor de las columnas debe ir del 1 al 7")
 
 print(contenidoColumna(2, tablero))
+print(contenidoFila(6, tablero))
+print(filas(tablero))
+print()
+print(columnas(tablero))
