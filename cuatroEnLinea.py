@@ -45,6 +45,7 @@ def completarTablero(secuencia,tablero):
     jugador+=1
   return tablero
 
+#Ahora la funcion dibuja el contorno del tablero
 def dibujarTablero(tablero):
   for fila in range(0,6):
     print("|",end="")
