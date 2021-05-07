@@ -45,6 +45,7 @@ def completarTablero(secuencia,tablero):
     jugador+=1
   return tablero
 
+#Ahora la funcion dibuja el contorno del tablero
 def dibujarTablero(tablero):
   for fila in range(0,6):
     print("|",end="")
@@ -63,17 +64,22 @@ def validarFichas(secuencia):
     if element<1 or element>7:
       return False
   return True
-        
-secuencia = [1,2,3,1,3,4]
+
+
+secuencia_texto = input("Ingresar la secuencia de numeros")
+secuencia = []
+for items in secuencia_texto.split(','):
+  secuencia.append(int(items))
+
 tablero = []
 if(validarFichas(secuencia)):
   tablero = completarTablero(secuencia,generarTablero())
   dibujarTablero(tablero)
 else:
     print("El valor de las columnas debe ir del 1 al 7")
-
-print(contenidoColumna(2, tablero))
-print(contenidoFila(6, tablero))
-print(filas(tablero))
 print()
-print(columnas(tablero))
+#print(contenidoColumna(2, tablero))
+#print(contenidoFila(6, tablero))
+#print(filas(tablero))
+#print()
+#print(columnas(tablero))
