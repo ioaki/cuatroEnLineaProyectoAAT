@@ -1,3 +1,4 @@
+# Devuelve un tablero vacio
 def generarTablero():
   return [
    [0,0,0,0,0,0,0],
