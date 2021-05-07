@@ -47,9 +47,15 @@ def completarTablero(secuencia,tablero):
 
 def dibujarTablero(tablero):
   for fila in range(0,6):
+    print("|",end="")
     for columna in range(0,7):
-        print(tablero[fila][columna],end="")
+      if tablero[fila][columna]==0:
+          print(" ",end="")
+      else:
+          print(tablero[fila][columna],end="")
+    print("|",end="")
     print();
+  print("+-------+",end="")
   return
 
 def validarFichas(secuencia):
