@@ -62,21 +62,19 @@ def dibujarTablero(tablero):
 def validarFichas(secuencia):
   for element in secuencia:
     if element<1 or element>7:
+      print("El valor de las columnas debe ir del 1 al 7")
       return False
   return True
 
-
-secuencia_texto = input("Ingresar la secuencia de numeros")
+secuencia_texto = input("Ingresar la secuencia de numeros: ")
 secuencia = []
-for items in secuencia_texto.split(','):
+for items in secuencia_texto.split(' '):
   secuencia.append(int(items))
 
 tablero = []
 if(validarFichas(secuencia)):
-  tablero = completarTablero(secuencia,generarTablero())
-  dibujarTablero(tablero)
-else:
-    print("El valor de las columnas debe ir del 1 al 7")
+  dibujarTablero(completarTablero(secuencia,generarTablero()))
+
 print()
 #print(contenidoColumna(2, tablero))
 #print(contenidoFila(6, tablero))
